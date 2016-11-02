@@ -21,6 +21,8 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 # forward gearman log to docker log collector
 RUN ln -sf /dev/stdout /var/log/gearmand.log
 
+RUN adduser app --disabled-password --no-create-home -gecos "" && usermod -g sudo app && \
+    echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 EXPOSE 7001 6379 11211 4730
 
