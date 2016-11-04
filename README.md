@@ -1,4 +1,7 @@
 # docker-apps
 
 ### Build
- `docker build -t webonyx/apps .`
+    docker build -t webonyx/app .
+    
+### Get
+    docker pull webonyx/app
